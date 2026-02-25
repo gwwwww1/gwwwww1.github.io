@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Patho-VLM Benchmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathoVLM-Benchmark</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-[#f8f9fa] text-gray-900 font-sans leading-relaxed">
 
-    <header class="py-20 px-4 text-center bg-white border-b border-slate-200">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-extrabold mb-4 tracking-tight text-indigo-900">🔬 PathoVLM Benchmark</h1>
-            <p class="text-xl text-slate-600 mb-10 leading-relaxed">
-                A Systematic Evaluation and Analysis of Vision-Language Foundation Models <br> 
-                for Fine-grained Pathological ROI Scenarios
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <a href="#leaderboard" class="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition">View Leaderboard</a>
-                <a href="#" class="border border-slate-300 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
-                <a href="#" class="border border-slate-300 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition"><i class="fa-solid fa-file-pdf mr-2"></i>Read Paper</a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t pt-12 border-slate-100">
-                <div><p class="text-4xl font-bold text-indigo-600">10+</p><p class="text-slate-500 uppercase text-sm tracking-widest mt-2">Foundation Models</p></div>
-                <div><p class="text-4xl font-bold text-indigo-600">500+</p><p class="text-slate-500 uppercase text-sm tracking-widest mt-2">ROI Samples</p></div>
-                <div><p class="text-4xl font-bold text-indigo-600">5+</p><p class="text-slate-500 uppercase text-sm tracking-widest mt-2">Organ Systems</p></div>
-                <div><p class="text-4xl font-bold text-indigo-600">4+</p><p class="text-slate-500 uppercase text-sm tracking-widest mt-2">Task Types</p></div>
-            </div>
+    <nav class="py-6 px-10 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <span class="text-xl font-bold tracking-tight text-blue-900">PathoVLM🔬</span>
+        <div class="space-x-8 text-sm font-medium text-gray-600">
+            <a href="#overview" class="hover:text-blue-600">概览</a>
+            <a href="#leaderboard" class="hover:text-blue-600">榜单</a>
+            <a href="#download" class="hover:text-blue-600">资源下载</a>
         </div>
-    </header>
+    </nav>
 
-    <main class="max-w-5xl mx-auto py-16 px-4">
-        <section id="leaderboard" class="mb-20">
-            <h2 class="text-3xl font-bold mb-8 text-center text-slate-800">Leaderboard</h2>
-            <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-slate-200">
-                <table class="w-full text-left border-collapse">
-                    <thead class="bg-slate-50 border-b border-slate-200">
-                        <tr>
-                            <th class="p-4 font-bold text-slate-700">Model</th>
-                            <th class="p-4 font-bold text-slate-700">Zero-shot Acc</th>
-                            <th class="p-4 font-bold text-slate-700">F1-Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-4 font-medium">Patho-CLIP (Ours)</td>
-                            <td class="p-4 text-indigo-600 font-bold">0.89</td>
-                            <td class="p-4 text-indigo-600 font-bold">0.85</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <section class="max-w-5xl mx-auto pt-20 pb-16 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-800">面向细粒度病理 ROI 场景的视觉–语言基础模型系统评测</h1>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
+            旨在建立标准化评测流程，系统评估 VLM 模型在细粒度病理场景下的表征能力与可靠性。
+        </p>
+        
+        <div class="flex justify-center space-x-4 mb-16">
+            <a href="#download" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"><i class="fa-solid fa-download mr-2"></i>获取数据集</a>
+            <a href="#" class="bg-white border border-gray-200 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"><i class="fa-solid fa-file-lines mr-2"></i>阅读论文 (Coming Soon)</a>
+        </div>
+    </section>
+
+    <section id="overview" class="bg-white py-20 border-y border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-10 text-center"><i class="fa-solid fa-layer-group text-blue-500 mr-2"></i>实施方案流程图</h2>
+            <div class="bg-gray-50 rounded-2xl p-4 border border-dashed border-gray-300 min-h-[400px] flex items-center justify-center">
+                <img src="./images/framework.png" alt="实施方案流程图" class="rounded-xl shadow-lg max-w-full">
             </div>
-        </section>
-    </main>
+            <p class="mt-6 text-center text-gray-500 text-sm">图注：系统化评估框架，包含数据预处理、模型推理及细粒度指标统计流程。</p>
+        </div>
+    </section>
+
+    <section id="leaderboard" class="max-w-5xl mx-auto py-20 px-6">
+        <h2 class="text-2xl font-bold mb-10 text-center">排行榜 (Leaderboard)</h2>
+        <div class="overflow-hidden bg-white rounded-xl shadow-sm border border-gray-200">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-600 text-sm uppercase">
+                    <tr>
+                        <th class="px-6 py-4">模型 (Model)</th>
+                        <th class="px-6 py-4">准确率 (Acc)</th>
+                        <th class="px-6 py-4">F1 分数</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    <tr class="hover:bg-blue-50 transition">
+                        <td class="px-6 py-4 font-bold">Patho-CLIP (Ours)</td>
+                        <td class="px-6 py-4 text-blue-600 font-mono">0.892</td>
+                        <td class="px-6 py-4 text-blue-600 font-mono">0.854</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 font-medium text-gray-400">Med-VLM (Baseline)</td>
+                        <td class="px-6 py-4 text-gray-400 font-mono">0.821</td>
+                        <td class="px-6 py-4 text-gray-400 font-mono">0.795</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-400 text-sm border-t border-gray-100">
+        <p>© 2026 PathoVLM Project. Licensed under CC BY-NC 4.0 for Academic Use.</p>
+    </footer>
 
 </body>
 </html>
