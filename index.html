@@ -154,45 +154,199 @@
     </section>
 
     <section id="leaderboard" class="py-12 bg-white">
-        <div class="w-full px-4 md:px-12">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center space-x-3 mb-2">
-                    <span class="h-[1px] w-6 bg-slate-200"></span>
-                    <span class="text-[9px] font-black tracking-[0.4em] text-indigo-600 uppercase">Methodology & Results</span>
-                    <span class="h-[1px] w-6 bg-slate-200"></span>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Integrated Evaluation Framework & Task-Specific Visualizations</h2>
+    <div class="w-full px-4 md:px-12">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center space-x-3 mb-2">
+                <span class="h-[1px] w-6 bg-slate-200"></span>
+                <span class="text-[9px] font-black tracking-[0.4em] text-indigo-600 uppercase">Methodology & Results</span>
+                <span class="h-[1px] w-6 bg-slate-200"></span>
+            </div>
+            <h2 class="text-xl md:text-3xl font-black text-slate-900 tracking-tight px-2">Integrated Evaluation Framework & Task-Specific Visualizations</h2>
+        </div>
+
+        <div class="relative w-full flex flex-col items-center justify-center">
+            <button onclick="changeSlide(-1)" class="absolute left-0 top-[40%] -translate-y-1/2 z-40 p-2 md:p-4 text-slate-200 hover:text-indigo-600 transition-all hidden md:block">
+                <i class="fa-solid fa-chevron-left text-3xl md:text-4xl"></i>
+            </button>
+            <button onclick="changeSlide(1)" class="absolute right-0 top-[40%] -translate-y-1/2 z-40 p-2 md:p-4 text-slate-200 hover:text-indigo-600 transition-all hidden md:block">
+                <i class="fa-solid fa-chevron-right text-3xl md:text-4xl"></i>
+            </button>
+
+            <div id="performance-carousel" class="carousel-container relative w-full max-w-6xl bg-white overflow-hidden">
+                <div class="fade-slide active"><img src="image/case4.png" class="main-img" alt="Case 1"></div>
+                <div class="fade-slide"><img src="image/case5.png" class="main-img" alt="Case 2"></div>
+                <div class="fade-slide"><img src="image/case9.png" class="main-img" alt="Case 3"></div>
+                <div class="fade-slide"><img src="image/case6.png" class="main-img" alt="Case 4"></div>
+                <div class="fade-slide"><img src="image/case7.png" class="main-img" alt="Case 5"></div>
+                <div class="fade-slide"><img src="image/case3.png" class="main-img" alt="Case 6"></div>
+                <div class="fade-slide"><img src="image/case1.png" class="main-img" alt="Case 7"></div>
+                <div class="fade-slide"><img src="image/case2.png" class="main-img" alt="Case 8"></div>
+                <div class="fade-slide"><img src="image/case8.png" class="main-img" alt="Case 9"></div>
             </div>
 
-            <div class="relative min-h-[350px] md:min-h-[650px] w-full flex flex-col items-center justify-center">
-                <button onclick="changeSlide(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-4 text-slate-200 hover:text-indigo-600 transition-all"><i class="fa-solid fa-chevron-left text-3xl md:text-4xl"></i></button>
-                <button onclick="changeSlide(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-4 text-slate-200 hover:text-indigo-600 transition-all"><i class="fa-solid fa-chevron-right text-3xl md:text-4xl"></i></button>
+            <div id="dynamic-legend" class="mt-6 mx-auto px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-100 w-[95%] md:w-auto md:min-w-[450px] text-center shadow-sm">
+                <p id="legend-text" class="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-relaxed">Loading...</p>
+            </div>
 
-                <div id="performance-carousel" class="relative h-[250px] md:h-[650px] w-full flex items-center justify-center bg-white overflow-hidden">
-                    <div class="fade-slide active"><img src="image/case1.png" class="main-img" alt="Case 1"></div>
-                    <div class="fade-slide"><img src="image/case2.png" class="main-img" alt="Case 2"></div>
-                    <div class="fade-slide"><img src="image/case3.png" class="main-img" alt="Case 3"></div>
-                    <div class="fade-slide"><img src="image/case4.png" class="main-img" alt="Case 4"></div>
-                    <div class="fade-slide"><img src="image/case5.png" class="main-img" alt="Case 5"></div>
-                    <div class="fade-slide"><img src="image/case6.png" class="main-img" alt="Case 6"></div>
-                    <div class="fade-slide"><img src="image/case7.png" class="main-img" alt="Case 7"></div>
-                    <div class="fade-slide"><img src="image/case8.png" class="main-img" alt="Case 8"></div>
-                    <div class="fade-slide"><img src="image/case9.png" class="main-img" alt="Case 9"></div>
-                    <div class="fade-slide"><img src="image/case10.png" class="main-img" alt="Case 10"></div>
-                    <div class="fade-slide"><img src="image/case11.png" class="main-img" alt="Case 11"></div>
-                </div>
-
-                <div id="dynamic-legend" class="mt-6 px-4 py-3 bg-slate-50/80 rounded-2xl border border-slate-100 min-w-[300px] md:min-w-[400px] text-center">
-                    <p id="legend-text" class="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-[0.15em]">Loading...</p>
-                </div>
-
-                <div class="w-full max-w-6xl mt-6 flex items-center justify-between border-t border-slate-100 pt-5 px-4">
-                    <div id="dot-nav" class="flex space-x-2 md:space-x-3"></div>
-                    <div class="font-mono text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase">Module <span id="current-num" class="text-indigo-600 text-sm ml-1">01</span> / 11</div>
+            <div class="w-full max-w-6xl mt-6 flex items-center justify-between border-t border-slate-100 pt-5 px-2 md:px-4">
+                <div id="dot-nav" class="flex space-x-1.5 md:space-x-3"></div>
+                <div class="font-mono text-[8px] md:text-[9px] font-bold tracking-[0.1em] text-slate-400 uppercase">
+                    Module <span id="current-num" class="text-indigo-600 text-xs md:text-sm ml-1">01</span> / 09
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* 响应式容器高度控制 */
+.carousel-container {
+    height: 300px; /* 默认手机高度 */
+}
+@media (min-width: 768px) {
+    .carousel-container { height: 600px; } /* PC 高度 */
+}
+
+.fade-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    /* 强制开启 3D 渲染，解决手机端二次卡顿 */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: opacity;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+    z-index: 1;
+}
+
+.fade-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.main-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    touch-action: pan-y; /* 允许垂直滚动页面，但水平滑动留给轮播 */
+    -webkit-user-drag: none;
+}
+
+/* 导航点在移动端微调大小 */
+.nav-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+    .nav-dot { width: 8px; height: 8px; }
+}
+.nav-dot.active {
+    background-color: #4f46e5;
+    transform: scale(1.2);
+}
+</style>
+
+<script>
+(function() {
+    let currentIndex = 0;
+    let isTransitioning = false;
+
+    const container = document.getElementById("performance-carousel");
+    const slides = document.querySelectorAll(".fade-slide");
+    const dotNav = document.getElementById("dot-nav");
+    const currentNum = document.getElementById("current-num");
+    const legendText = document.getElementById("legend-text");
+
+    const legends = [
+        "Clinically intuitive diagnostic tasks",
+        "Timeline of the evaluated models",
+        "Comparative rankings of pathology foundation models in zero-shot classification across diverse metrics",
+        "Performance scaling trajectories (Left) and model rankings (Right) under supervised settings",
+        "Pediatric Dataset Curation Workflow",
+        "Performance evolution across diverse experimental settings (Top), performance scaling relative to data availability (Bottom Left & Center), and model rankings (Bottom Right) within the pediatric pathology cohort",
+        "Linear probing results under the full-sample setting across four configurations (Normal, All Augmentations, Rotation & Flipping, and Stain Normalization)",
+        "Comparative evaluation of the impact of multi-prompt versus single-prompt configurations on performance results",
+        "Zero-shot classification results on the GCHTID dataset (Top) and linear probing performance under the full-sample setting across additional datasets (Bottom)",
+    ];
+
+    // 初始化 Dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.className = `nav-dot ${i === 0 ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(i);
+        dotNav.appendChild(dot);
+    });
+    const dots = document.querySelectorAll(".nav-dot");
+
+    function updateUI(n) {
+        if (isTransitioning || n === currentIndex) return;
+        isTransitioning = true;
+
+        requestAnimationFrame(() => {
+            slides[currentIndex].classList.remove("active");
+            dots[currentIndex].classList.remove("active");
+
+            currentIndex = n;
+
+            slides[currentIndex].classList.add("active");
+            dots[currentIndex].classList.add("active");
+
+            currentNum.innerText = (currentIndex + 1).toString().padStart(2, '0');
+            legendText.innerText = legends[currentIndex];
+
+            setTimeout(() => { isTransitioning = false; }, 450);
+        });
+    }
+
+    window.changeSlide = (n) => {
+        updateUI((currentIndex + n + slides.length) % slides.length);
+    };
+    function goToSlide(n) { updateUI(n); }
+
+    // --- 移动端触控滑动逻辑 ---
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    container.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    container.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    }, {passive: true});
+
+    function handleGesture() {
+        const threshold = 50; // 滑动阈值
+        if (touchEndX < touchStartX - threshold) changeSlide(1); // 左划 -> 下一张
+        if (touchEndX > touchStartX + threshold) changeSlide(-1); // 右划 -> 上一张
+    }
+
+    // --- 强制解码预加载（防二次卡顿） ---
+    slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        if (img && img.decode) {
+            img.decode().catch(e => console.log("Decode error ignored"));
+        }
+    });
+
+    legendText.innerText = legends[0];
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "ArrowLeft") changeSlide(-1);
+        if (e.key === "ArrowRight") changeSlide(1);
+    });
+})();
+</script>
 
     <section id="download" class="py-32 bg-[#0a0f1a] text-white">
         <div class="max-w-6xl mx-auto px-6">
@@ -350,50 +504,6 @@
     }
 </style>
 
-    <script>
-    (function() {
-        let currentIndex = 0;
-        const slides = document.querySelectorAll(".fade-slide");
-        const dotNav = document.getElementById("dot-nav");
-        const currentNum = document.getElementById("current-num");
-        const legendText = document.getElementById("legend-text");
-        const legends = [
-            "Results of image enhancement and stain normalization under few-shot and full-sample settings",
-            "Systematic evaluation of prompt and class label design in zero-shot pathology classification",
-            "Clinically grounded evaluation tasks and evaluated foundation models",
-            "Comprehensive evaluation on the pediatric pathology dataset",
-            "Evaluation framework for pathology foundation models",
-            "Supervised evaluation and performance scaling of pathology foundation models",
-            "Image-to-image retrieval benchmarking across pathology datasets",
-            "Curation workflow and composition of the pediatric pathology dataset",
-            "Supplementary experiments on Zero-shot and linear-probing performance across datasets",
-            "Comprehensive evaluation of pathology foundation models across classification and ranking metrics",
-            "Cross-modal retrieval benchmarking across multiple pathology datasets"
-        ];
-        slides.forEach((_, i) => {
-            const dot = document.createElement("div");
-            dot.className = `nav-dot ${i === 0 ? 'active' : ''}`;
-            dot.onclick = () => goToSlide(i);
-            dotNav.appendChild(dot);
-        });
-        const dots = document.querySelectorAll(".nav-dot");
-        function updateUI(n) {
-            slides[currentIndex].classList.remove("active");
-            dots[currentIndex].classList.remove("active");
-            currentIndex = n;
-            slides[currentIndex].classList.add("active");
-            dots[currentIndex].classList.add("active");
-            currentNum.innerText = (currentIndex + 1).toString().padStart(2, '0');
-            legendText.innerText = legends[currentIndex];
-        }
-        window.changeSlide = (n) => { updateUI((currentIndex + n + slides.length) % slides.length); };
-        function goToSlide(n) { updateUI(n); }
-        updateUI(0);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "ArrowLeft") changeSlide(-1);
-            if (e.key === "ArrowRight") changeSlide(1);
-        });
-    })();
-    </script>
+  
 </body>
 </html>
