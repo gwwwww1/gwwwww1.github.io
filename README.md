@@ -1,51 +1,21 @@
-# [Towards Fair Benchmarking of VLMs for Fine-Grained Histology Image Interpretation]
-### (e.g., Towards Fair Benchmarking of VLMs for Fine-Grained Histology Image Interpretation)
+## Summary of Pathological Datasets
 
-<p align="center">
-  <a href="#abstract">
-    <img src="https://img.shields.io/badge/Status-Abstract-lightgrey?style=for-the-badge" alt="Abstract">
-  </a>
-  <a href="https://github.com/gwwwww1/gwwwww1.github.io">
-    <img src="https://img.shields.io/badge/Code-GitHub-black?style=for-the-badge&logo=github" alt="Code">
-  </a>
-  <a href="#download">
-    <img src="https://img.shields.io/badge/Dataset-Download-blue?style=for-the-badge" alt="Dataset">
-  </a>
-  <a href="#paper">
-    <img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge" alt="Paper">
-  </a>
-</p>
+The following table summarizes the publicly accessible datasets used in this study, encompassing various cancer types and pathological scenes.
 
----
-
-## 🖼️ Project Overview
-<p align="center">
-  <img src="./images/framework.png" width="90%" alt="Project Framework Diagram">
-</p>
-
-
----
-
-<a name="abstract"></a>
-## 📝 Abstract
-[在此处替换你的研究简介。建议控制在 3-5 句话以内，保持页面清爽。]
-
----
-
-<a name="download"></a>
-## 💾 Dataset Download
-* **Images**: [Training Set (Download Link)](#) | [Test Set (Download Link)](#)
-* **Labels**: [Annotation Files (JSON/CSV)](#)
-
----
-
-<a name="paper"></a>
-## 📄 Paper
-* **Full Text**: [Link to PDF / ArXiv](#)
-* **Citation**: 
-```bibtex
-@article{gwwwww12026patho,
-  title={Towards Fair Benchmarking of VLMs for Fine-Grained Histology},
-  author={Gwwwww1},
-  year={2026}
-}
+| Dataset Name | Tumor Type / Domain | Resolution | Samples | Classes | Source Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **PCam** | Breast Cancer | 96×96 | 327,680 | 2 | [Link](https://patchcamelyon.grand-challenge.org/) |
+| **NCT-CRC-HE-100K** | Colorectal Cancer | 224×224 | 100,000 | 9 | [Link](https://zenodo.org/record/1214456) |
+| **NCT-CRC-100K-norm** | Colorectal Cancer | 224×224 | 100,000 | 9 | [Link](https://zenodo.org/record/1214456) |
+| **CRC100K-Val** | Colorectal Cancer | 224×224 | 7,180 | 9 | [Link](https://zenodo.org/record/1214456) |
+| **Osteo** | Osteosarcoma | 1024×1024 | 1,144 | 3 | [Link](https://www.cancerimagingarchive.net/collection/osteosarcoma-tumor-assessment/) |
+| **ARCH** (Book/Pubmed) | Multiple (Vision-Language) | - | 15,164 | Captions | [Link](https://warwick.ac.uk/fac/cross_fac/tia/data/arch) |
+| **PathMMU** | Multiple (Multimodal) | - | 7,774 | Captions | [Link](https://huggingface.co/datasets/jamessyx/PathMMU) |
+| **SkinCancer** | Skin Cancer | 395×395 | 129,364 | 16 | [Link](https://www.isic-archive.com/) |
+| **LC25000** | Lung & Colon Cancer | 768×768 | 25,000 | 5 | [Link](https://github.com/tampapath/lung_colon_image_set) |
+| **PanNuke** | Multiple (Nuclei Inst.) | 256×256 | 6,243 | 3 | [Link](https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke) |
+| **UniToPatho** | Colorectal Polyps | - | 9,536 | 6 | [Link](https://ieee-dataport.org/open-access/unitopatho) |
+| **WSSS4LUAD** | Lung Adenocarcinoma | - | 10,091 | 2 | [Link](https://wsss4luad.grand-challenge.org/WSSS4LUAD/) |
+| **BRACS** | Breast Cancer Subtypes | - | 4,539 | 7 | [Link](https://www.bracs.icar.cnr.it/) |
+| **SICAPv2** | Prostate Cancer | - | 18,783 | 4 | [Link](https://data.mendeley.com/datasets/9xxm58dvs3/1) |
+| **GCHTID** | Gastric Cancer | 224×224 | 31,096 | 8 | [Link](https://figshare.com/articles/dataset/Gastric_Cancer_Histopathology_Tissue_Image_Dataset_GCHTID_/24087768) |
