@@ -39,7 +39,7 @@
     <div class="text-xl md:text-2xl font-black tracking-tighter text-[#0f172a] flex items-center mb-2.5 md:mb-0 select-none">
         <i class="fa-solid fa-microscope mr-1.5 text-indigo-600"></i>FairPath
     </div>
-    
+
     <div class="flex items-center justify-between md:justify-end w-full md:w-auto gap-0.5 md:gap-1 overflow-x-auto scrollbar-none">
         <a href="#overview" class="flex-1 md:flex-initial text-center px-2 md:px-5 py-1.5 md:py-2 text-[11px] md:text-sm font-bold uppercase tracking-wider md:tracking-widest text-slate-500 hover:text-indigo-600 transition opacity-70 hover:opacity-100 whitespace-nowrap">Overview</a>
         <a href="#leaderboard" class="flex-1 md:flex-initial text-center px-2 md:px-5 py-1.5 md:py-2 text-[11px] md:text-sm font-bold uppercase tracking-wider md:tracking-widest text-slate-500 hover:text-indigo-600 transition opacity-70 hover:opacity-100 whitespace-nowrap">Performance</a>
@@ -185,8 +185,8 @@
                 <div class="fade-slide"><img src="image/case8.png" class="main-img" alt="Case 9"></div>
             </div>
 
-            <div id="dynamic-legend" class="mt-6 mx-auto px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-100 w-[95%] md:w-auto md:min-w-[450px] text-center shadow-sm">
-                <p id="legend-text" class="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-relaxed">Loading...</p>
+            <div id="dynamic-legend" class="mt-6 mx-auto px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-100 w-[95%] md:w-auto md:min-w-[450px] text-justify shadow-sm">
+                <p id="legend-text" class="text-[10px] md:text-[11px] font-bold text-slate-500 tracking-wider leading-relaxed">Loading...</p>
             </div>
 
             <div class="w-full max-w-6xl mt-6 flex items-center justify-between border-t border-slate-100 pt-5 px-2 md:px-4">
@@ -480,7 +480,7 @@
 })();
 </script>
 <!-- ==================== VIEW DATASET SECTION END ==================== -->
-    
+
 <style>
 /* 响应式容器高度控制 */
 .carousel-container {
@@ -550,15 +550,15 @@
     const legendText = document.getElementById("legend-text");
 
     const legends = [
-        "Clinically intuitive diagnostic tasks",
-        "Timeline of the evaluated models",
-        "Comparative rankings of pathology foundation models in zero-shot classification across diverse metrics",
-        "Performance scaling trajectories (Left) and model rankings (Right) under supervised settings",
-        "Pediatric Dataset Curation Workflow",
-        "Performance evolution across diverse experimental settings (Top), performance scaling relative to data availability (Bottom Left & Center), and model rankings (Bottom Right) within the pediatric pathology cohort",
-        "Linear probing results under the full-sample setting across four configurations (Normal, All Augmentations, Rotation & Flipping, and Stain Normalization)",
-        "Comparative evaluation of the impact of multi-prompt versus single-prompt configurations on performance results",
-        "Zero-shot classification results on the GCHTID dataset (Top) and linear probing performance under the full-sample setting across additional datasets (Bottom)",
+        "Our ROI-level evaluation framework comprises seven clinically grounded tasks, split into retrieval paradigms (cross-modal diagnostic support and case-based image retrieval) and classification paradigms (cancer detection, subtyping, phenotyping, grading, and neoplastic progression assessment).",
+        "Timeline and specifications of the 20 benchmarked pathology foundation models (2021–2025). The benchmark comprises 16 vision-language architectures and 4 vision-only encoders. Architectural configurations, backbones, and pretraining data scales are summarized for each model.",
+        "Across evaluation metrics, model rankings remain remarkably invariant in the zero-shot classification task, with PathGenCLIP-L and MUSK consistently emerging as the top performers. Notably, while larger-parameter models (indicated by marker size) generally achieve higher balanced accuracy, they maintain comparable stability to smaller baselines, demonstrating only marginal variations in 95% bootstrap confidence interval half-widths.",
+        "The performance scaling curves on the left reveal that vision–language models hold a distinct advantage in extreme few-shot settings, outperforming the best vision-only baseline by approximately 4% at 3-shot. However, this advantage diminishes as supervision increases, with vision-only models demonstrating superior scaling potential and establishing a roughly 2% lead under full supervision. Under the 10-shot regime shown on the right, PathGenCLIP-L and MUSK maintain optimal performance and stability, whereas larger vision-only architectures like UNI2-h and Virchow2 approach leading vision–language model performance but exhibit higher standard deviations, with statistical significance between the top two models validated using two-sided Wilcoxon signed-rank tests.",
+        "The curation workflow illustrates the multi-stage pipeline developed to construct the pediatric pathology cohort, which begins with the retrieval of whole-slide images representing five distinct pediatric low-grade glioma subtypes from the Digital Brain Tumor Atlas, restricted to patients aged 21 years or younger. Following cohort definition, regions of interest are annotated by three senior neuropathologists and cross-validated to establish diagnostic consensus. Finally, high-resolution patches are tiled from these verified regions, filtered to eliminate artifacts and non-tissue areas, and assigned definitive region-of-interest-level labels.",
+        "We assessed zero-shot classification and prompt sensitivity on the pediatric low-grade glioma datasets (left), revealing that all evaluated models achieved balanced accuracies below 50%, with PathGenCLIP-L achieving the highest average balanced accuracy (36.46%, 95% CI: 34.42–38.54%) followed by QuiltNet-B32 (30.66%, 95% CI: 27.84–33.46%). Prompt design followed trends consistent with established benchmarks: multi-template embedding averaging provided superior stability over single-template prompts, and semantically descriptive labels generally enhanced performance across models. Under few-shot regimes (right), the overall supervision-dependent trends were partially preserved, with top-performing vision–language models showing an average advantage of approximately 2% in the extreme 3-shot setting. However, unlike the patterns observed in established public benchmarks, this vision–language advantage disappeared entirely by the 10-shot regime, where the strongest vision-only architectures began to consistently outperform the best vision–language models on average across the pediatric cohorts.",
+        "Under full supervision, preprocessing effects became more consistent across all four datasets. While preprocessing strategies generally yielded performance gains of 1% to 5% and enhanced training stability by reducing variance, these benefits followed a pattern of diminishing returns for the top-performing models.",
+        "The template structure comparison reveals that the multi-prompt template strategy delivers superior performance in nearly all evaluation scenarios across the nine region-of-interest level pathology datasets. However, evaluations on the WSSSLUAD dataset demonstrate that a meticulously configured single-prompt template can occasionally outperform the averaged multi-prompt baseline, suggesting that domain-specific prompt engineering remains highly effective under certain cohort distributions. Concurrently, the multi-prompt approach consistently provides superior overall stability and architectural resilience across diverse vision–language foundation models.",
+        "The template structure comparison on the GCHTID dataset demonstrates that zero-shot image classification performance remains below 50% across all evaluated models under both prompting configurations. Consistent with our primary findings, accuracy on this organ-specific dataset is markedly lower than on established public cohorts, highlighting its increased diagnostic complexity. We hypothesize that this pervasive performance disparity stems from the interplay between pretraining data prevalence and diagnostic granularity. Nevertheless, multi-prompt templates consistently deliver superior overall stability and structural resilience across the evaluated vision–language foundation models.",
     ];
 
     // 初始化 Dots
@@ -699,64 +699,78 @@
     </section>
 
 
-   <section class="py-10 md:py-14 bg-white border-t border-slate-100 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 mb-8 md:mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center space-x-2">
-            <div class="w-1 h-4 bg-indigo-600 rounded-full"></div>
-            <h2 class="text-[9px] md:text-[10px] font-black tracking-[0.4em] text-slate-900 uppercase">Project Contributors</h2>
+
+    <section class="py-10 md:py-16 bg-slate-50/50 border-t border-b border-slate-100/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-100 pb-4">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-1 h-3.5 bg-indigo-600 rounded-full"></div>
+            <h2 class="text-[10px] font-black tracking-[0.3em] text-slate-800 uppercase">Affiliated Institutions</h2>
         </div>
-        <div class="flex space-x-4 md:space-x-5 text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-slate-400">
-            <span><sup class="text-indigo-600 mr-1">*</sup>Joint First</span>
-            <span><sup class="text-rose-500 mr-1">†</sup>Correspondence</span>
+        <div class="text-[10px] font-medium text-slate-400 tracking-wider">
+            <span class="text-slate-700 font-bold">Guo, W.<sup>*</sup></span> et al.
+            <span class="mx-2 text-slate-300">|</span>
+            Corresponding: <span class="text-slate-700 font-bold">& Zhao, J.<sup>†</sup></span>
         </div>
     </div>
 
-    <div class="relative flex overflow-hidden group">
-        <div class="flex animate-marquee-sync hover:pause whitespace-nowrap items-center flex-nowrap">
-
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div id="institutions-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 justify-items-stretch items-center">
             <script>
+                // 包含完整 21 个 Affiliations 对应的官方主页超链接
                 const authors = [
-                    {name: "Wanshan Guo", tag: "*", org: "Chongqing Univ.", logo: "cqu.png", type: "first"},
-                    {name: "Hongping Tang", tag: "*", org: "SZ Maternity", logo: "szmch.png", type: "first"},
-                    {name: "Yulong Peng", tag: "*", org: "JNU 1st Hosp.", logo: "jnu.png", type: "first"},
-                    {name: "Yongxin Ge", tag: "†", org: "Chongqing Univ.", logo: "cqu.png", type: "reg"},
-                    {name: "T. Roetzer", tag: "", org: "Med-Uni Vienna", logo: "vienna.png", type: "reg"},
-                    {name: "Zheyi Ji", tag: "", org: "Chongqing Univ.", logo: "cqu.png", type: "reg"},
-                    {name: "P. Chikontwe", tag: "", org: "Harvard Med.", logo: "hms.png", type: "reg"},
-                    {name: "Jiying Wang", tag: "", org: "Univ. Chicago", logo: "uchicago.png", type: "reg"},
-                    {name: "Shih-Yen Lin", tag: "", org: "Harvard Med.", logo: "hms.png", type: "reg"},
-                    {name: "Senyu Wang", tag: "", org: "Chongqing Univ.", logo: "cqu.png", type: "reg"},
-                    {name: "Bojan Karlaš", tag: "", org: "HPI Germany", logo: "hpi.png", type: "reg"},
-                    {name: "Yirong Chen", tag: "", org: "Shanghai AI Lab", logo: "sail.png", type: "reg"},
-                    {name: "Fang Yan", tag: "", org: "Shanghai AI Lab", logo: "sail.png", type: "reg"},
-                    {name: "Phan Anh Le", tag: "", org: "Harvard Univ.", logo: "harvard.png", type: "reg"},
-                    {name: "Zongxin Yang", tag: "", org: "Harvard Med.", logo: "hms.png", type: "reg"},
-                    {name: "Xiyue Wang", tag: "", org: "Harvard Med.", logo: "hms.png", type: "reg"},
-                    {name: "Sen Yang", tag: "", org: "Ant Group", logo: "ant.png", type: "reg"},
-                    {name: "Le Lu", tag: "", org: "Ant Group", logo: "ant.png", type: "reg"},
-                    {name: "Peter Pytel", tag: "", org: "Univ. Chicago", logo: "uchicago.png", type: "reg"},
-                    {name: "S. Volchenboum", tag: "", org: "Univ. Chicago", logo: "uchicago.png", type: "reg"},
-                    {name: "S. Damodharan", tag: "", org: "Univ. Chicago", logo: "uchicago.png", type: "reg"},
-                    {name: "M. Nasrallah", tag: "", org: "UPenn Med.", logo: "penn_med.png", type: "reg"},
-                    {name: "Shu Gong", tag: "†", org: "CHCMU Hosp.", logo: "CHCMU.png", type: "reg"},
-                    {name: "Kun-Hsing Yu", tag: "†", org: "Harvard Med.", logo: "hms.png", type: "reg"},
-                    {name: "Junhan Zhao", tag: "†", org: "Univ. Chicago", logo: "uchicago.png", type: "reg"}
+                    { org: "Chongqing Univ.", logo: "cqu.png", url: "https://www.cqu.edu.cn" },
+                    { org: "SZ Maternity", logo: "szmch.png", url: "https://www.szmch.net.cn" },
+                    { org: "JNU 1st Hosp.", logo: "jnu.png", url: "https://www.jd120.com/" },
+                    { org: "Med-Uni Vienna", logo: "vienna.png", url: "https://www.meduniwien.ac.at" },
+                    { org: "Univ. Chicago (Genetics)", logo: "uchicago.png", url: "https://genes.uchicago.edu" },
+                    { org: "Harvard Med. (DBMI)", logo: "hms.png", url: "https://dbmi.hms.harvard.edu" },
+                    { org: "Shanghai AI Lab", logo: "sail.png", url: "https://www.shlab.org.cn" },
+                    { org: "Fudan Cancer Center", logo: "fudanc.png", url: "https://www.shca.org.cn" },
+                    { org: "Fudan Med. College", logo: "fudanm.png", url: "https://shmc.fudan.edu.cn" },
+                    { org: "Harvard Univ.", logo: "harvard.png", url: "https://www.harvard.edu" },
+                    { org: "HPI Germany", logo: "hpi.png", url: "https://hpi.de" },
+                    { org: "Mass General Brigham", logo: "mgb.png", url: "https://www.massgeneralbrigham.org" },
+                    { org: "Dana-Farber Cancer Inst.", logo: "dfci.png", url: "https://www.dana-farber.org" },
+                    { org: "Ant Group", logo: "ant.png", url: "https://www.antgroup.com" },
+                    { org: "UChicago Pediatrics", logo: "uchicago.png", url: "https://pediatrics.uchicago.edu" },
+                    { org: "UPenn Med.", logo: "penn_med.png", url: "https://www.med.upenn.edu" },
+                    { org: "CHCMU Hosp.", logo: "CHCMU.png", url: "https://www.chcmu.com" },
+                    { org: "Brigham & Women's Hosp.", logo: "bwh.png", url: "https://www.brighamandwomens.org" },
+                    { org: "Harvard Data Science", logo: "harvard_hdsi.png", url: "https://datascience.harvard.edu" },
+                    { org: "Kempner Inst. Harvard", logo: "kempner.png", url: "https://kempnerinstitute.harvard.edu" },
+                    { org: "UChicago Medicine (CCC)", logo: "uchicago_med.png", url: "https://www.uchicagomedicine.org/cancer" }
                 ];
 
-                const renderItem = (a) => `
-                    <div class="flex flex-col items-center mx-3 md:mx-4">
-                        <span class="text-[11px] md:text-[13px] font-bold ${a.type==='corr'?'text-rose-500':'text-slate-800'} mb-1 md:mb-2">
-                            ${a.name}<sup class="${a.type==='corr'?'text-rose-500':'text-indigo-600'}">${a.tag}</sup>
-                        </span>
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] ${a.type==='corr'?'border border-rose-50':''} flex items-center justify-center p-2 md:p-3 transition-transform hover:scale-105">
-                            <img src="logos/${a.logo}" class="max-h-full object-contain pointer-events-none">
-                        </div>
-                        <span class="mt-2 text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-tighter text-center">${a.org}</span>
-                    </div>
-                `;
+                // 按照 org 字段去重
+                const uniqueOrgs = [];
+                const seen = new Set();
 
-                const fullContent = authors.map(renderItem).join('') + '<div class="w-8 md:w-12"></div>';
-                document.write(fullContent + fullContent);
+                authors.forEach(a => {
+                    if (!seen.has(a.org)) {
+                        seen.add(a.org);
+                        uniqueOrgs.push({ org: a.org, logo: a.logo, url: a.url });
+                    }
+                });
+
+                // 渲染带超链接和移动端优化的 Card
+                // target="_blank" 确保点击时在新标签页打开，不影响用户浏览你的主站
+                const htmlContent = uniqueOrgs.map(inst => `
+                    <a href="${inst.url}" target="_blank" rel="noopener noreferrer"
+                       class="flex items-center space-x-2 md:space-x-3 bg-white border border-slate-100 rounded-xl p-2 md:p-2.5 shadow-[0_2px_6px_rgba(0,0,0,0.01)] transition-all duration-200 hover:shadow-[0_6px_20px_rgba(0,0,0,0.05)] hover:border-indigo-100 hover:-translate-y-0.5 group cursor-pointer">
+
+                        <div class="w-8 h-8 md:w-10 md:h-10 flex-shrink-0 bg-slate-50 rounded-lg flex items-center justify-center p-1 md:p-1.5 group-hover:bg-indigo-50/50 transition-colors">
+                            <img src="logos/${inst.logo}" alt="${inst.org}" class="max-h-full max-w-full object-contain pointer-events-none">
+                        </div>
+
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[8px] md:text-[10px] font-bold text-slate-600 uppercase tracking-tight block truncate group-hover:text-indigo-600 transition-colors">
+                                ${inst.org}
+                            </span>
+                        </div>
+                    </a>
+                `).join('');
+
+                document.write(htmlContent);
             </script>
         </div>
     </div>
@@ -790,6 +804,6 @@
     }
 </style>
 
-  
+
 </body>
 </html>
